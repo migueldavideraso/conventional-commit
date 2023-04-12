@@ -1,16 +1,19 @@
 {
-  "name": "conventional-commit",
+  "name": "@migueleraso/conventional-commit",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "commit": "node index.js"
   },
-  "author": "",
+  "author": "migueleraso",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.1.5"
+    "inquirer": "9.1.5"
+  },
+  "keywords": [ "git", "conventional", "commit" ],
+  "publishConfig": {
+	"access": "public"
   }
 }
