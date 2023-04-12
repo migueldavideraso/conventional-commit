@@ -1,11 +1,11 @@
 {
   "name": "@migueleraso/conventional-commit",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "commit": "node index.js"
+    "start": "node ./index.js"
   },
   "author": "migueleraso",
   "license": "ISC",
@@ -15,5 +15,8 @@
   "keywords": [ "git", "conventional", "commit" ],
   "publishConfig": {
 	"access": "public"
+  },
+  "bin": {
+	"conventional-commit": "./index.js"
   }
 }

@@ -27,6 +27,6 @@ export default setSettings(settings => {
 Usage
 ```json
 "scripts": {
-    "commit": "@migueleraso/conventional-commit"
+    "commit": "conventional-commit"
  },
 ```
