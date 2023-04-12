@@ -108,10 +108,10 @@ const setCommit = async () => {
 const createCommit = async () => {
 
 	const scope = commitData.scope.split(':')[0]
-	const message = commitData.message.split(':')[0]
+	const type = commitData.type.split(':')[0]
 	const description = commitData.description ? `\n\n ${commitData.description}` : ''
 
-	const commitMessage = `${commitData.type} (${scope}) ${message} ${description}`
+	const commitMessage = `${type} (${scope}) ${commitData.message} ${description}`
 
 	exec(`git commit -m "${commitMessage}"`, (error, stdout, stderr) => {
 
