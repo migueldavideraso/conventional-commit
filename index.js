@@ -15,7 +15,7 @@ let commitData = {}
 const setConfig = async () => {
 
 	const packageDir = path.dirname(new URL(import.meta.url).pathname)
-	const baseDir = packageDir.replace('/node_modules/@migueleraso/convetional-commit', '').replace('/C:', '')
+	const baseDir = packageDir.replace('/node_modules/@migueleraso/conventional-commit', '').replace('/C:', '')
 	const configPath = path.resolve(baseDir, `conventional-commit.config.js`)
 	const importConfigPath = new URL(`file://${configPath}`).href
 
