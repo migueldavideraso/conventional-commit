@@ -5,7 +5,7 @@ Installation
 npm install @migueleraso/conventional-commit -D
 ```
 
-Config at file convetional_commit.config.js
+Config at file conventional-commit.config.js
 ```js
 import { setSettings } from '@migueleraso/conventional-commit/settings.js'
 

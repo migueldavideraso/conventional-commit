@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 import path from 'path'
-import { existsSync } from 'fs'
 import inquirer from 'inquirer'
+
+import { URL } from 'url'
+import { existsSync } from 'fs'
 import { exec } from 'child_process';
 import { getSettings } from './settings.js';
 
@@ -12,15 +14,17 @@ let commitData = {}
 
 const setConfig = async () => {
 
-	const basedir = path.dirname(new URL(import.meta.url).pathname)
-	const configPath = `${basedir}/convetional_commit.config.js`
+	const packageDir = path.dirname(new URL(import.meta.url).pathname)
+	const baseDir = packageDir.replace('/node_modules/@migueleraso/convetional-commit', '').replace('/C:', '')
+	const configPath = path.resolve(baseDir, `conventional-commit.config.js`)
+	const importConfigPath = new URL(`file://${configPath}`).href
 
-	if (!existsSync(configPath.slice(1))) {
+	if (!existsSync(configPath)) {
 		settings = getSettings()
 		return 
 	}
 
-	settings = (await import(configPath)).default
+	settings = (await import(importConfigPath)).default
 }
 
 
